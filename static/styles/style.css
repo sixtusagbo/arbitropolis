@@ -63,7 +63,8 @@ body {
   background: transparent;
 }
 
-.brand, .content {
+.brand,
+.content {
   position: absolute;
   left: 10%;
 }
@@ -115,11 +116,24 @@ a {
   z-index: 2;
 }
 
-.content h3.timer {
+.content .timer {
   margin-bottom: 20px;
-  font-size: 5rem;
+  display: flex;
+  text-align: center;
   color: #eee;
+}
+
+.content .timer .time {
+  margin-right: 1rem;
+}
+
+.content .timer .time h3 {
+  font-size: 5.8rem;
   font-weight: bold;
+}
+
+.content .timer .time span {
+  font-size: 1.3rem;
 }
 
 .content p.status {
@@ -144,11 +158,19 @@ a {
   padding: 7px;
 }
 
+@media (max-width: 600px) {
+  .content .timer .time h3 {
+    font-size: 5rem;
+  }
+}
+
 @media (max-width: 470px) {
-  .brand, .content {
+
+  .brand,
+  .content {
     left: 5%;
   }
-  
+
   .brand {
     font-size: 2.5rem;
   }
@@ -157,7 +179,7 @@ a {
     width: 70px;
   }
 
-  .content h3.timer {
+  .content .timer .time h3 {
     font-size: 3.7rem;
   }
 }
