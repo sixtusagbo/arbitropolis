@@ -81,3 +81,38 @@ $('.carousel').flickity({
   // at end of cells, wraps-around to first for infinite scrolling
 
 });
+
+function padLeft(n) {
+  return (n < 10 ? "0" + n : n);
+}
+
+// Set the date we're counting down to
+const countDownDate = new Date("Sept 2, 2023 11:59:59").getTime();
+
+// Update the count down every 1 second
+const timer = setInterval(function() {
+
+  // Get today's date and time
+  const now = new Date().getTime();
+    
+  // Find the distance between now and the count down date
+  const distance = countDownDate - now;
+    
+  // Time calculations for days, hours, minutes and seconds
+  const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+  const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+  const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+    
+  // Output the result
+  document.getElementById("days").textContent = padLeft(days);
+  document.getElementById("hours").textContent = padLeft(hours);
+  document.getElementById("minutes").textContent = padLeft(minutes);
+  document.getElementById("seconds").textContent = padLeft(seconds);
+    
+  // If the count down is over
+  if (distance < 0) {
+    clearInterval(timer);
+    document.querySelector(".timer").innerHTML = "00:00:00";
+  }
+}, 1000);
