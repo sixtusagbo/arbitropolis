@@ -87,7 +87,7 @@ function padLeft(n) {
 }
 
 // Set the date we're counting down to
-const countDownDate = new Date("Sept 2, 2023 11:59:59").getTime();
+const countDownDate = new Date("Dec 31, 2025 11:59:59").getTime();
 
 // Update the count down every 1 second
 const timer = setInterval(function() {
